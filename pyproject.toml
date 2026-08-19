@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "signalscout"
+version = "0.1.0"
+description = "AI-powered web research and qualification system"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.0",
+    "playwright>=1.44",
+    "pydantic>=2.7",
+    "openai>=1.50",
+    "sqlalchemy>=2.0",
+    "pandas>=2.2",
+    "openpyxl>=3.1",
+    "streamlit>=1.35",
+    "python-dotenv>=1.0",
+    "typer>=0.12",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

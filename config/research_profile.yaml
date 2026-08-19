@@ -1,0 +1,19 @@
+name: Technology Buying Signals
+
+signals:
+  - AI Adoption
+  - Technology Change
+  - Hiring
+  - Expansion
+  - Product Launch
+  - Partnership
+
+high_impact_signals:
+  - AI Adoption
+  - Technology Change
+
+qualification:
+  high:
+    minimum_validated_signals: 2
+  medium:
+    minimum_validated_signals: 1
