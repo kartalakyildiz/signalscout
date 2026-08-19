@@ -1,9 +1,17 @@
 """Page discovery: classify same-domain homepage links into the handful of
 useful page types SignalScout looks at. Not a general-purpose crawler - this
 only ever proposes at most one URL per page type, plus optional common-path
-guesses when link-based discovery finds nothing."""
+guesses when link-based discovery finds nothing.
+
+Classification is intentionally conservative (see classify_link): it trusts
+URL structure far more than link text, because link text is often prose
+(article titles, descriptions) that happens to contain a category word
+without the link actually being that category of page. A link is left
+unclassified - rather than guessed at - whenever neither signal is strong
+enough; per-category discovery is best-effort, not mandatory."""
 from __future__ import annotations
 
+import re
 from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup
@@ -13,19 +21,21 @@ from signalscout.models.enums import PageType
 
 KEYWORDS: dict[PageType, set[str]] = {
     PageType.ABOUT: {"about", "company"},
-    PageType.PRODUCT: {"product", "platform", "solution", "service"},
-    PageType.CAREERS: {"career", "jobs"},
-    PageType.NEWS: {"news", "blog", "press"},
+    PageType.PRODUCT: {"product", "products", "platform", "solution", "solutions", "feature", "features", "service", "services"},
+    PageType.CAREERS: {"career", "careers", "job", "jobs"},
+    PageType.NEWS: {"news", "blog", "press", "changelog"},
 }
 
 COMMON_PATHS: dict[PageType, list[str]] = {
     PageType.ABOUT: ["/about", "/about-us"],
-    PageType.PRODUCT: ["/product", "/products"],
+    PageType.PRODUCT: ["/product", "/products", "/features"],
     PageType.CAREERS: ["/careers", "/jobs"],
-    PageType.NEWS: ["/blog", "/news"],
+    PageType.NEWS: ["/blog", "/news", "/changelog"],
 }
 
 _SKIP_PREFIXES = ("#", "mailto:", "tel:", "javascript:")
+_WORD_RE = re.compile(r"[a-z0-9]+")
+_MAX_LABEL_WORDS = 4  # anchor text longer than this reads as prose, not a nav label
 
 DISCOVERABLE_TYPES = (PageType.ABOUT, PageType.PRODUCT, PageType.CAREERS, PageType.NEWS)
 
@@ -44,11 +54,42 @@ def extract_links(html: str, base_url: str) -> list[tuple[str, str]]:
     return links
 
 
+def _first_path_segment_words(url: str) -> set[str]:
+    """Words from only the first path segment (e.g. "changelog" from
+    "/changelog/2024-01-new-feature", not "feature") - deep slug words are
+    noisy and shouldn't be able to hijack a page's category."""
+    path = urlparse(url).path.lower().strip("/")
+    if not path:
+        return set()
+    first_segment = path.split("/", 1)[0]
+    return set(_WORD_RE.findall(first_segment))
+
+
+def _short_label_words(text: str) -> set[str]:
+    """Words from anchor text, but only if it reads like a nav label
+    ("About", "Careers") rather than an article title or description."""
+    words = _WORD_RE.findall(text.lower())
+    if not words or len(words) > _MAX_LABEL_WORDS:
+        return set()
+    return set(words)
+
+
 def classify_link(url: str, text: str) -> PageType | None:
-    haystack = f"{urlparse(url).path} {text}".lower()
+    """Path structure is the authoritative signal; short anchor-text labels
+    are only consulted when the path itself is inconclusive. Full-sentence
+    link text (article titles, descriptions) is never matched against, since
+    it routinely contains category words in unrelated prose."""
+    path_words = _first_path_segment_words(url)
     for page_type, keywords in KEYWORDS.items():
-        if any(keyword in haystack for keyword in keywords):
+        if path_words & keywords:
             return page_type
+
+    label_words = _short_label_words(text)
+    if label_words:
+        for page_type, keywords in KEYWORDS.items():
+            if label_words & keywords:
+                return page_type
+
     return None
 
 
