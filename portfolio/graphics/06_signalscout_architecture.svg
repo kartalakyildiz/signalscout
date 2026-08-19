@@ -1,0 +1,86 @@
+<svg width="1440" height="1000" viewBox="0 0 1440 1000" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="1440" height="1000" rx="0" ry="0" fill="#0D1117" stroke="none" stroke-width="1" opacity="1"/>
+<text x="720.0" y="92" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="38" font-weight="750" fill="#F0F3F6" text-anchor="middle" opacity="1">SignalScout Architecture</text>
+<text x="720.0" y="126" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">Evidence-first research automation from public web data to reviewable output</text>
+<rect x="73" y="342.0" width="220" height="236" rx="12" ry="12" fill="#11161D" stroke="#21262D" stroke-width="1" opacity="1"/>
+<text x="183.0" y="218" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#79B8FF" text-anchor="middle" letter-spacing="0.09em" opacity="1">INPUT</text>
+<rect x="91" y="368.0" width="184" height="60" rx="8" ry="8" fill="#161B22" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="183.0" y="392.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">CSV Companies</text>
+<text x="183.0" y="412.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">Company • Website • Industry</text>
+<line x1="183.0" y1="430.0" x2="183.0" y2="451.0" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="178.5,448.8 187.5,448.8 183.0,456.0" fill="#6E7681"/>
+<rect x="91" y="458.0" width="184" height="60" rx="8" ry="8" fill="#161B22" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="183.0" y="482.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">Validation &amp; Dedup</text>
+<text x="183.0" y="502.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">Normalize URLs, remove duplicates</text>
+<rect x="319" y="232" width="300" height="456" rx="12" ry="12" fill="#11161D" stroke="#21262D" stroke-width="1" opacity="1"/>
+<text x="469.0" y="218" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#79B8FF" text-anchor="middle" letter-spacing="0.09em" opacity="1">RESEARCH</text>
+<rect x="337" y="258" width="264" height="56" rx="8" ry="8" fill="#161B22" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="469.0" y="280.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">Page Discovery</text>
+<text x="469.0" y="300.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">About • Product • Careers • News</text>
+<line x1="469.0" y1="316" x2="469.0" y2="333" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="464.5,330.8 473.5,330.8 469.0,338" fill="#6E7681"/>
+<rect x="337" y="340" width="264" height="56" rx="8" ry="8" fill="#161B22" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="469.0" y="362.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">HTTPX Scraper</text>
+<text x="469.0" y="382.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">Primary fetch (fast, static HTML)</text>
+<rect x="457.52" y="442" width="118" height="42" rx="8" ry="8" fill="#11161D" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="516.52" y="457.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">Playwright</text>
+<text x="516.52" y="477.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">JS fallback</text>
+<line x1="395.08" y1="398" x2="395.08" y2="523" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="390.58,520.8 399.58,520.8 395.08,528" fill="#6E7681"/>
+<text x="395.08" y="416" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#8B949E" text-anchor="middle" opacity="1">sufficient</text>
+<text x="395.08" y="428" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#8B949E" text-anchor="middle" opacity="1">content</text>
+<line x1="516.52" y1="398" x2="516.52" y2="437" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="512.02,432.8 521.02,432.8 516.52,440" fill="#6E7681"/>
+<text x="516.52" y="416" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#8B949E" text-anchor="middle" opacity="1">thin / JS</text>
+<text x="516.52" y="428" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#8B949E" text-anchor="middle" opacity="1">content</text>
+<line x1="516.52" y1="484" x2="516.52" y2="523" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="512.02,520.8 521.02,520.8 516.52,528" fill="#6E7681"/>
+<rect x="337" y="530" width="264" height="56" rx="8" ry="8" fill="#161B22" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="469.0" y="552.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">HTML Cleaning</text>
+<text x="469.0" y="572.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">Strip noise, extract text</text>
+<rect x="645" y="232" width="230" height="456" rx="12" ry="12" fill="#11161D" stroke="#21262D" stroke-width="1" opacity="1"/>
+<text x="760.0" y="218" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#79B8FF" text-anchor="middle" letter-spacing="0.09em" opacity="1">AI + TRUST</text>
+<rect x="663" y="258" width="194" height="60" rx="8" ry="8" fill="#161B22" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="760.0" y="282.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">Structured AI Extraction</text>
+<text x="760.0" y="302.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">Typed signal extraction</text>
+<line x1="760.0" y1="320" x2="760.0" y2="341" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="755.5,338.8 764.5,338.8 760.0,346" fill="#6E7681"/>
+<rect x="663" y="348" width="194" height="60" rx="8" ry="8" fill="rgba(88, 166, 255, 0.13)" stroke="rgba(88, 166, 255, 0.35)" stroke-width="1" opacity="1"/>
+<text x="760.0" y="372.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#79B8FF" text-anchor="middle" opacity="1">Evidence Validation</text>
+<text x="760.0" y="392.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">Source ID + quote verification</text>
+<line x1="760.0" y1="410" x2="760.0" y2="431" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="755.5,428.8 764.5,428.8 760.0,436" fill="#6E7681"/>
+<rect x="663" y="438" width="194" height="60" rx="8" ry="8" fill="#161B22" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="760.0" y="462.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">Deterministic Qualification</text>
+<text x="760.0" y="482.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">Deterministic Python rules</text>
+<rect x="901" y="342.0" width="210" height="236" rx="12" ry="12" fill="#11161D" stroke="#21262D" stroke-width="1" opacity="1"/>
+<text x="1006.0" y="218" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#79B8FF" text-anchor="middle" letter-spacing="0.09em" opacity="1">STORAGE</text>
+<rect x="919" y="368.0" width="174" height="60" rx="8" ry="8" fill="#161B22" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="1006.0" y="392.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">SQLAlchemy</text>
+<text x="1006.0" y="412.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">ORM data-access layer</text>
+<line x1="1006.0" y1="430.0" x2="1006.0" y2="451.0" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="1001.5,448.8 1010.5,448.8 1006.0,456.0" fill="#6E7681"/>
+<rect x="919" y="458.0" width="174" height="60" rx="8" ry="8" fill="#161B22" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="1006.0" y="482.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">SQLite</text>
+<text x="1006.0" y="502.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">Companies • Scans • Pages • Evidence</text>
+<rect x="1137" y="342.0" width="230" height="236" rx="12" ry="12" fill="#11161D" stroke="#21262D" stroke-width="1" opacity="1"/>
+<text x="1252.0" y="218" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#79B8FF" text-anchor="middle" letter-spacing="0.09em" opacity="1">OUTPUT</text>
+<rect x="1155" y="368.0" width="194" height="60" rx="8" ry="8" fill="#161B22" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="1252.0" y="392.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">Streamlit Dashboard</text>
+<text x="1252.0" y="412.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">Review, filters, manual review</text>
+<rect x="1155" y="458.0" width="194" height="60" rx="8" ry="8" fill="#161B22" stroke="#30363D" stroke-width="1" opacity="1"/>
+<text x="1252.0" y="482.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14" font-weight="650" fill="#F0F3F6" text-anchor="middle" opacity="1">CSV / Excel Export</text>
+<text x="1252.0" y="502.0" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#8B949E" text-anchor="middle" opacity="1">Company summary + evidence log</text>
+<polyline points="295,398.0 306.0,398.0 306.0,286.0 311,286.0" fill="none" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="309.0,281.0 309.0,291.0 317,286.0" fill="#6E7681"/>
+<polyline points="621,286.0 632.0,286.0 632.0,288.0 637,288.0" fill="none" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="635.0,283.0 635.0,293.0 643,288.0" fill="#6E7681"/>
+<polyline points="877,288.0 888.0,288.0 888.0,398.0 893,398.0" fill="none" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="891.0,393.0 891.0,403.0 899,398.0" fill="#6E7681"/>
+<polyline points="1113,398.0 1124.0,398.0 1124.0,398.0 1129,398.0" fill="none" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="1127.0,393.0 1127.0,403.0 1135,398.0" fill="#6E7681"/>
+<polyline points="1113,398.0 1124.0,398.0 1124.0,488.0 1129,488.0" fill="none" stroke="#30363D" stroke-width="1.5"/>
+<polygon points="1127.0,483.0 1127.0,493.0 1135,488.0" fill="#6E7681"/>
+<rect x="410.0" y="774" width="620" height="40" rx="8" ry="8" fill="rgba(88, 166, 255, 0.13)" stroke="rgba(88, 166, 255, 0.35)" stroke-width="1" opacity="1"/>
+<text x="720.0" y="800" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="14.5" font-weight="650" fill="#79B8FF" text-anchor="middle" opacity="1">Unsupported evidence is rejected before it can affect qualification.</text>
+</svg>
